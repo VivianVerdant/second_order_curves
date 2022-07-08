@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/second_order_curves/second_order_curve.gd" type="Script" id=1]
+[ext_resource path="res://addons/second_order_curves/example/example.gd" type="Script" id=2]
+[ext_resource path="res://addons/second_order_curves/second_order_system.gd" type="Script" id=3]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 3 )
+Variables = null
+frequency = 1.0
+damping = 0.5
+response = 0.0
+Preview = null
+preview_curve = null
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.289681, 0, 0 )
+script = ExtResource( 2 )
+
+[node name="SecondOrderCurve" type="Node" parent="Position3D"]
+script = ExtResource( 1 )
+value = -0.289681
+system = SubResource( 1 )
+
+[node name="CSGSphere" type="CSGSphere" parent="Position3D"]
+
+[connection signal="value_changed" from="Position3D/SecondOrderCurve" to="Position3D" method="_on_SecondOrderCurve_value_changed"]
