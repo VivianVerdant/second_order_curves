@@ -7,21 +7,21 @@
 [sub_resource type="Resource" id=1]
 script = ExtResource( 3 )
 Variables = null
-frequency = 1.0
-damping = 0.5
-response = 0.0
+frequency = 4.079
+damping = 0.488
+response = 4.361
 Preview = null
 preview_curve = null
 
 [node name="Spatial" type="Spatial"]
 
 [node name="Position3D" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.289681, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.898941, 0, 0 )
 script = ExtResource( 2 )
 
 [node name="SecondOrderCurve" type="Node" parent="Position3D"]
 script = ExtResource( 1 )
-value = -0.289681
+value = 0.898941
 system = SubResource( 1 )
 
 [node name="CSGSphere" type="CSGSphere" parent="Position3D"]
